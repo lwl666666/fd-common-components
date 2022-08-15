@@ -1,0 +1,24 @@
+{
+  "name": "fd-common-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "docs:deploy": "bash deploy.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.9.7",
+    "element-ui": "^2.15.9",
+    "vuepress": "^1.9.7",
+    "vuepress-plugin-demo-container": "^0.2.0"
+  },
+  "dependencies": {
+    "async-validator": "^1.11.5",
+    "pinyin-match": "^1.2.2"
+  }
+}
