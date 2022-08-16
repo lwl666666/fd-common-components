@@ -3,7 +3,7 @@
  # @Author: liwulin
  # @Date: 2022-08-15 14:17:07
  # @LastEditors: liwulin
- # @LastEditTime: 2022-08-15 17:52:02
+ # @LastEditTime: 2022-08-16 08:40:56
  # @Description: 
  # @FilePath: \fd-common-components\deploy.sh
 ### 
@@ -25,6 +25,6 @@ git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO> 这里做出对应的替换
-git push -f git@github.com:lwl666666/fd-common-components.git master:gh-pages
+git push -f git@github.com:lwl666666/fd-common-components.git main:gh-pages
 
 cd -
