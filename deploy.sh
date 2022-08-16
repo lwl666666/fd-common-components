@@ -3,7 +3,7 @@
  # @Author: liwulin
  # @Date: 2022-08-15 14:17:07
  # @LastEditors: liwulin
- # @LastEditTime: 2022-08-16 08:40:56
+ # @LastEditTime: 2022-08-16 08:42:09
  # @Description: 
  # @FilePath: \fd-common-components\deploy.sh
 ### 
@@ -12,7 +12,7 @@
 set -e
 
 # 生成静态文件
-npm run build
+# npm run build
 
 # 进入生成的文件夹
 cd docs/.vuepress/dist
