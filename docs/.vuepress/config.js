@@ -2,9 +2,9 @@
  * @Author: liwulin
  * @Date: 2022-08-15 09:38:08
  * @LastEditors: liwulin
- * @LastEditTime: 2022-08-15 14:16:51
+ * @LastEditTime: 2022-08-25 09:32:15
  * @Description: 
- * @FilePath: \fd-common-components\fd-common-components\docs\.vuepress\config.js
+ * @FilePath: \fd-common-components\docs\.vuepress\config.js
  */
 module.exports = {
     base: '/fd-common-components/',
@@ -35,7 +35,7 @@ module.exports = {
                     title: '组件',
                     collapsable: false,
                     children: [
-                        ['../guide/FdFilterSelect.md', 'FdFilterSelect'],
+                        ['../guide/FdSelect.md', 'FdSelect'],
                     ]
                 }
             ]

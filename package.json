@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "async-validator": "^1.11.5",
+    "fd-common": "^1.1.47",
     "pinyin-match": "^1.2.2"
   }
 }

@@ -1,5 +1,5 @@
 ## 介绍
-fd-filter-select组件是基于element-ui的Select组件，集成了汉语拼音检索的功能，同时简化了Select的配置，可以更快的编写下拉组件
+fd-select组件是基于element-ui的Select组件，集成了汉语拼音检索的功能，同时简化了Select的配置，可以更快的编写下拉组件
 
 ## 案例
 
@@ -10,7 +10,7 @@ options必传，下拉即可实现拼音检索
 
 ```html
 <template>
-  <fd-filter-select v-model="value" :options="options" placeholder="请选择"></fd-filter-select>
+  <fd-select v-model="value" :options="options" placeholder="请选择"></fd-select>
 </template>
 
 <script>
@@ -49,13 +49,13 @@ options必传，下拉即可实现拼音检索
 
 ```html
 <template>
-  <fd-filter-select 
+  <fd-select 
     v-model="value" 
     :options="options" 
     labelProp="name" 
     valueProp="id" 
     placeholder="请选择">
-  </fd-filter-select>
+  </fd-select>
 </template>
 
 <script>
@@ -90,12 +90,12 @@ options必传，下拉即可实现拼音检索
 :::demo
 ```html
 <template>
-  <fd-filter-select 
+  <fd-select 
     v-model="value" 
     :options="options"
     :disabledMethod="disabledMethod"
     placeholder="请选择">
-  </fd-filter-select>
+  </fd-select>
 </template>
 
 <script>
@@ -139,12 +139,12 @@ options必传，下拉即可实现拼音检索
 
 ```html
 <template>
-  <fd-filter-select v-model="value" :options="options" placeholder="请选择">
+  <fd-select v-model="value" :options="options" placeholder="请选择">
     <div slot="option" slot-scope="scope">
         <i class="el-icon-star-off"></i>
         <span>{{scope.option.label}}</span>
     </div>
-  </fd-filter-select>
+  </fd-select>
 </template>
 
 <script>
@@ -177,13 +177,13 @@ options必传，下拉即可实现拼音检索
 
 ### el-select属性
 
-el-selectfd组件的属性可在fd-filter-select组件中使用
+el-selectfd组件的属性可在fd-select组件中使用
 
 :::demo 设置clearable属性，则可将选择器清空
 
 ```html
 <template>
-  <fd-filter-select v-model="value" :options="options" placeholder="请选择" clearable></fd-filter-select>
+  <fd-select v-model="value" :options="options" placeholder="请选择" clearable></fd-select>
 </template>
 
 <script>
@@ -229,7 +229,7 @@ el-selectfd组件的属性可在fd-filter-select组件中使用
 
 | 事件名称   | 说明     | 回调参数   |
 |---------- |--------  |-------- |
-| visible   | 下拉框出现/隐藏时触发，为select原来的visible-change事件 | 出现则为 true，隐藏则为 false |
+| optionsVisibleChange   | 下拉框出现/隐藏时触发，为select原来的visible-change事件 | 出现则为 true，隐藏则为 false |
 
 ## Slots
 

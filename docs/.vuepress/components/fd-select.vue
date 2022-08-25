@@ -2,9 +2,9 @@
  * @Author: liwulin
  * @Date: 2022-07-22 10:36:27
  * @LastEditors: liwulin
- * @LastEditTime: 2022-08-15 09:30:23
+ * @LastEditTime: 2022-08-25 09:33:47
  * @Description: 
- * @FilePath: \茂名反推\src\components\FdFilterSelect\src\main.vue
+ * @FilePath: \fd-common-components\docs\.vuepress\components\fd-select.vue
 -->
 <template>
     <el-select
@@ -17,7 +17,7 @@
         <slot>
             <el-option
                 v-for="(item,index) in selectOilOptions"
-                :key="item[valueProp]"
+                :key="generateKey(item,index)"
                 :label="item[labelProp]"
                 :value="item[valueProp]"
                 :disabled="item.disabled===undefined?disabledMethod(item,index):item.disabled"
@@ -35,13 +35,11 @@
 </template>
 
 <script>
-import pinyin from 'pinyin-match';
-
 const DEFAULT_LABEL_PROP = "label"; //默认label字段
 const DEAULT_VALUE_PROP = "value";//默认value字段
 
 export default {
-    name: "FdFilterSelect",
+    name: "FdSelect",
     props: {
         //选项数据
         options: {
@@ -90,13 +88,22 @@ export default {
             } else {
                 //返回匹配的数组
                 _selectOilOptions = options.filter(option => {
-                    return pinyin.match(option[labelProp], filterValue);
+                    return option[labelProp].matchPY(filterValue);
                 });
             }
             return _selectOilOptions;
         }
     },
     methods: {
+        /**
+         * 生成Key
+         * --------------------------------------------
+         * @param {*} item
+         * @param {*} index
+         */        
+        generateKey(item, index) {
+            return `${item[this.labelProp]}_${item[this.valueProp]}_${index}`
+        },
         /**
          * @description: 根据拼音搜索油种
          * @param {*} val 传入的拼音
@@ -110,7 +117,7 @@ export default {
          * @return {*}
          */
         visibleChange(val) {
-            this.$emit("visible", val);
+            this.$emit("optionsVisibleChange", val);
             if (!val) {
                 //在一定时间间隔后，下拉选项隐藏后再重置过滤，
                 let st = setTimeout(() => {
